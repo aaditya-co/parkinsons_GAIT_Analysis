@@ -1,0 +1,43 @@
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PD Test</title>
+    <link href="static/style.css" rel="stylesheet" />
+  </head>
+  <body>
+    <div>
+      <header style="position: relative;">
+        <div class="showcase-top">
+          <a  id = "dummy_true"  class="btn btn-rounded">-</a>
+        </div>
+      <div class = "showcase-content" style="display: contents; margin-top: 1rem;">
+        <div id="tab-1-content" class="tab-content-item">
+          <div class="text-center">
+            <p class="text-lg" style="color: rgba(172, 162, 162, 0.986); padding-top: 1rem;">
+              Parkinson Disease Test
+            </p>
+            <span id="result" class="text-lg" style="font-size: 50px;" >
+            </span>
+          </div>
+          <div class="text-center"> <br>
+            <a href="/" class="btn btn-lg" id ='home' style='margin-bottom:10px'>HOME</a>
+            <a href="/test" class="btn btn-lg" id ='need_test' style='margin-bottom:10px; margin-top: 5px;'>Check FOG + Hoehn and Yahr scale</a>
+          </div>
+          <script>
+           var x = {{ res }};
+            if (x == 0) {
+              document.getElementById("result").innerHTML = "You are not affected by Parkinson Disease";
+              document.getElementById("need_test").style.display = "none";
+            }
+            else {
+              document.getElementById("result").innerHTML = "You are affected by Parkinson Disease";
+              document.getElementById("home").style.display = "none";
+            }
+            </script>
+        </div>
+      </div>
+    </header>
+  </div>
+  </body>
+</html>

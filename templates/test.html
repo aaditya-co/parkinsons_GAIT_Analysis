@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PD Test</title>
+    <link href="static/test.css" rel="stylesheet" />
+  </head>
+  <body>
+    <section class="showcase">
+      <div class="content">
+        <div>
+          <p style="font-size: 36px">Check FOG + Hoehn and Yahr scale</p>
+          <br /><br />
+          <form class="container" method="post">
+            <input type="text" name="pd_data" placeholder="PD Sensor data" />
+            <input type="text" name="fog_data" placeholder="Fog Sensor Data" />
+            <button onclick="loader()" id="button" type="submit">
+              Check Result
+            </button>
+          </form>
+          <div id="loader" class="loader"></div>
+        </div>
+        <a id="home" href="/" style="text-decoration: none">HOME</a>
+      </div>
+    </section>
+    <script>
+      function loader() {
+        document.getElementById("button").style.display = "none";
+        document.getElementById("home").style.display = "none";
+        document.getElementById("loader").style.display = "block";
+        document.getElementById("video").style.display = "inline";
+      }
+    </script>
+  </body>
+</html>

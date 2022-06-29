@@ -1,0 +1,72 @@
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Symptoms Page</title>
+  <link href="static/style.css" rel="stylesheet" />
+</head>
+<body>
+  <div>
+    <header style="position: relative;">
+      <div class="showcase-top">
+        <a
+          href="https://www.instagram.com/aaditya.co"
+          target="_blank"
+          class="btn btn-rounded"
+          >contact Us</a
+        >
+      </div>
+    <div class = "showcase-content" style="display: contents; margin-top: 1rem;">
+      <div id="tab-1-content" class="tab-content-item">
+        <div class="text-center">
+          <p class="text-lg" style="color: rgba(172, 162, 162, 0.986); padding-top: 1rem;">
+            <strong>Final Prediction of FOG + Hoehn and Yahr scale</strong>
+          </p><br>
+        </div>
+        <table class="table">
+          <tbody>
+            <tr>
+              <td>Freezing of GAIT</td>
+              <td class="freeze">Freeze</td>
+            </tr>
+            <tr>
+              <td>Hoehn Yahr Scale Severity Level</td>
+              <td class="scale">scale</td>
+            </tr>
+          </tbody>
+        </table>
+        <div class="text-center"> <br><br>
+          <a href="/" class="btn btn-lg" id ='test' style='margin-bottom:10px'>HOME</a>
+        </div>
+        <script>
+            const jsonfile = JSON.parse({{jsonfile|tojson}});
+            var hy_pred = JSON.parse(jsonfile.HY, null, 2);
+            var fog_pred = JSON.parse(jsonfile.FOG, null, 2);
+            
+
+            if (fog_pred == 1) {
+                document.querySelector(".freeze").innerHTML = "Yes";
+            } else {
+                document.querySelector(".freeze").innerHTML = "No";
+            }
+
+            if (hy_pred == 0) {
+              document.querySelector(".scale").innerHTML =
+                "0.0";
+            } else if (hy_pred == 1) {
+              document.querySelector(".scale").innerHTML =
+                "2.5";
+            } else if (hy_pred == 2) {
+              document.querySelector(".scale").innerHTML =
+                "2";
+            } else if (hy_pred == 3) {
+              document.querySelector(".scale").innerHTML =
+                "3";
+            }
+        </script>
+      </div>
+    </div>
+  </header>
+</div>
+</body>
+</html>
